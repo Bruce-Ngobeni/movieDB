@@ -4,9 +4,10 @@ import fetch from "node-fetch";
 const PORT = 3000;
 const app = express();
 
-const url = "https://www.omdbapi.com/?t=Power+Book+II&apikey=b9b186b5"
+const url = "https://www.omdbapi.com/?s=Power&apikey=b9b186b5"
 
 app.set("view engine", "ejs");
+
 app.use(express.static("public"));
 
 app.get("/movie", (req, res) => {
@@ -16,7 +17,8 @@ app.get("/movie", (req, res) => {
         return data.json();
     })
     .then((data) => {
-        res.send(data);
+        // res.send(data);
+        res.render("movies", {data})
     })
     .catch((err) => {
         res.send("Error while trying to fetch data! :-(");
