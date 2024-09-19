@@ -15,6 +15,10 @@ app.get("/movie", (req, res) => {
     .then((data) => {
         res.send(data);
     })
+    .catch((err) => {
+        res.send("Error while trying to fetch data! :-(");
+        console.log("Error while trying to fetch data! :-(");
+    })
 })
 
 
