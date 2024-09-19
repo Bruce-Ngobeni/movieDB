@@ -6,6 +6,9 @@ const app = express();
 
 const url = "https://www.omdbapi.com/?t=Power+Book+II&apikey=b9b186b5"
 
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+
 app.get("/movie", (req, res) => {
 
     fetch(url)
