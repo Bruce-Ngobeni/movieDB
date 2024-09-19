@@ -1,7 +1,7 @@
 import express from "express";
 import fetch from "node-fetch";
 
-const PORT = 3000;
+const PORT = 4000;
 const app = express();
 
 const url = "https://www.omdbapi.com/?s=Power&apikey=b9b186b5"
